@@ -21,15 +21,3 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250
 });
-
-galleryListEl.addEventListener('click', onPreviewImage);
-
-function onPreviewImage(event) {
-  event.preventDefault();
-
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-
-  lightbox.open({ startIndex: event.target.parentNode.parentNode.dataset.index });
-}
